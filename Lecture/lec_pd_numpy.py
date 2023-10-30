@@ -1,16 +1,4 @@
-""" lec_pd_numpy.py
 
-Companion codes for the lecture on Numpy
-"""
-
-import numpy as np 
-import pandas as pd
-
-
-
-# ---------------------------------------------------------------------------- 
-#   The dates and prices lists
-# ---------------------------------------------------------------------------- 
 dates = [
   '2020-01-02', 
   '2020-01-03',
@@ -37,7 +25,7 @@ prices = [
   7.0400,
   ]
 
-# Trading day counter
+
 bday = [
   1,
   2,
@@ -50,73 +38,48 @@ bday = [
   9,
   10]
 
-# ---------------------------------------------------------------------------- 
-#   Create two series
-# ---------------------------------------------------------------------------- 
 
-# Series with prices
 prc_ser = pd.Series(data=prices, index=dates)
 
 # Series with trading day
 bday_ser = pd.Series(data=bday, index=dates)
 
 
-# ---------------------------------------------------------------------------- 
-#   Create a dataframe
-# ---------------------------------------------------------------------------- 
-# Data Frame with close and Bday columns
+
 df = pd.DataFrame({'Close': prc_ser, 'Bday': bday_ser}) 
 #print(df)
 
 #df.info()
 
 
-# Get the series containing "Close" prices
-# 只查看一列
+
 ser = df['Close']
 # print(ser)
 
-# Get the underlying data array
-# 只查看数据
+
 # print(ser.array)
 
-# and the type
 # print(type(ser.array))
 
 
-# The .values attribute will give you a numpy array 
-# with the contents of the series
-# .values会产生一个numpy的series
 # print(ser.values)
 
-# The type is <class 'numpy.ndarray'>
+
 # print(type(ser.values))
 
-#以上只需知道numpy.array是服务于pandas的即可，深入的cs知识可不掌握
-
-
-# 重要：处理空值
-# ----------------------------------------------------------------------------
-#   Working with missing data 
-# ----------------------------------------------------------------------------
-
-# Add an empty row to the `df` dataframe
-# Create a copy
 df_nan = df.copy()
 
-# Add an emtpy row to the `df_nan` dataframe
-# np.nan本身是一个浮点数保存，加入np.nan之后会把这一列变成float
 df_nan.loc['3000-01-01'] = [np.nan, np.nan]
 # print(df_nan)
 # print(df)
 
-# Note that the dtypes changed
+
 # print("\nThis is the `df` dataframe:")
 # print(df.info())
 # print("\nThis is the `df_nan` dataframe:")
 # print(df_nan.info())
 
-# Convert dtypes
+
 #df_new = df_nan.convert_dtypes() 
 #print(df_new.info()) 
 
@@ -124,28 +87,23 @@ df_nan.loc['3000-01-01'] = [np.nan, np.nan]
 #print(type(df_new.loc['3000-01-01', 'Bday'])) 
 
 
-# ----------------------------------------------------------------------------
-#   The df.info method
-# ----------------------------------------------------------------------------
 
 #data = {
 #      'col_a': [1, 2, 3],
 #      'col_b': [10.0, None, 13.0],
 #      }
-#
 
-# First a data frame without a user-defined index
+
+
 
 #df0 = pd.DataFrame(data)
 #print('\nprint(df0) -->')
 #print(df0)
 #print('\ndf0.info() --> ')
 #df0.info()
-#
 
 
 
-# A data frame with a strings as index labels
 
 #idx = ['2020-01-01', '2020-01-02', '2020-01-03']
 #df1 = pd.DataFrame(data, index=idx)
@@ -153,9 +111,7 @@ df_nan.loc['3000-01-01'] = [np.nan, np.nan]
 #print(df1)
 #print('\ndf1.info() --> ')
 #df1.info()
-#
 
-# A data frame with a datetime objs as index labels
 
 #idx_dt = pd.to_datetime(idx)
 #df2 = pd.DataFrame(data, index=idx_dt)
@@ -163,4 +119,3 @@ df_nan.loc['3000-01-01'] = [np.nan, np.nan]
 #print(df2)
 #print('\ndf2.info() --> ')
 #df2.info()
-#
