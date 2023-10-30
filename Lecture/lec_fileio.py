@@ -17,7 +17,6 @@ fobj  = open(SRCFILE, mode= 'r')
 # print(type(fobj))
 
 
-# without parameters:
 cnts  = fobj.read()
 # print(type(cnts))
 
@@ -25,10 +24,9 @@ cnts  = fobj.read()
 
 # print(cnts[:20])
 
-# Check if the file is closed
 # print(fobj.closed)
 
-# Close the file
+
 # fobj.close()
 # print(fobj.closed)
 
