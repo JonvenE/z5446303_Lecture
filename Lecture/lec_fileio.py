@@ -1,7 +1,4 @@
-""" lec_fileio.py
 
-Companion codes for the lecture on reading and writing files
-"""
 
 import os
 
