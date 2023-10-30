@@ -80,10 +80,3 @@ x  = '?'
 
 # Try the following... it will not work because we cannot slice dictionaries
 #prc_dic['2020-01-02':'2020-01-13']          # Raises Exception
-
-
-
-
-
-
-

@@ -169,5 +169,3 @@ ser_sort_inplace = pd.Series(data=[1,3,2], index=['a', 'c', 'b'])
 # to a new variable.
 ser_sort_inplace.sort_index(inplace=True)
 print(ser_sort_inplace)
-
-

@@ -140,11 +140,4 @@ x  = '?'
 
 # 2. This will return the fourth element from the end of the **list** `prices` 
 #    (or 7.00)
-#print(prices[-4]) 
-
-
-
-
-
-
-
+#print(prices[-4])
